@@ -1,0 +1,43 @@
+.options{
+    width: 150px;
+    padding: 10px;
+    margin-right: 30px;
+    text-align: center;
+}
+.active-option{
+    background-color:lightgray;
+    border-radius: 10px;
+}
+
+.date-container{
+    /* height:30px; */
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-left: 15px;
+}
+.date-image{
+    height: 25px;
+    align-self: center;
+    padding: 1px;
+    margin:1px 
+    
+}
+
+.chart-container{
+    margin-top: 30px;
+    padding: 5px;
+}
+.mainChart{
+    width: 100%;
+}
+input[type="date"]::-webkit-calendar-picker-indicator,::-webkit-inner-spin-button{
+    background-image: url("../../assets/calendar.png");
+    background-position: center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+   color: rgba(204,204,204,0);
+}
+a{
+    text-decoration: none;
+    color: black;
+}

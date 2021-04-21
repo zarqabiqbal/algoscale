@@ -1,0 +1,19 @@
+<!-- <div class="headerBar">
+  <div class="small_circle"></div>
+  <div class="small_circle"></div>
+  <div class="small_circle"></div>
+  <div class="navbarText">
+    Full Stack Assignment
+  </div>
+</div> -->
+<ng-container *ngIf="storage.getItem('isLogIn')=='true'; then loggedIn; else loggedOut"></ng-container>
+<ng-template #loggedIn>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
+<ng-template #loggedOut>
+  <div>
+    <app-loginpage></app-loginpage>
+  </div>
+</ng-template>

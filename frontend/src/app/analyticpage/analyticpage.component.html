@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="navbar-brand">
+            <img src="{{FILE_URL}}/logo.png" height="40">
+        </div>          
+        <div class="navbar-nav ml-auto">   
+            <div class="navbar-nav">
+                <a routerLink='/'>
+                    <div class="options">Contacts</div>
+                </a>
+                <a routerLink='/analytics'>
+                    <div class="options active-option">Analytics</div>
+                </a>
+                <!-- <div class="options">Contacts</div>
+                <div class="options active-option">Analytics</div> -->
+            </div>          
+            <img src="{{FILE_URL}}/logout.png" (click)="logout()" height="40">
+        </div>
+    </nav>
+    <div class="container">
+        <div class="form-inline">
+            <div class="date-container">
+                <input type="date" [(ngModel)]="dates.date1" (change)="onDateEnter()" min="1950-01-01"  class="form-control">
+                <!-- <img src="{{FILE_URL}}/calendar.png" class="date-image"> -->
+            </div>
+            <div class="date-container">
+                <input type="date" [(ngModel)]="dates.date2" (change)="onDateEnter()" min="{{dates.date1}}" class="form-control">
+                <!-- <img src="{{FILE_URL}}/calendar.png" class="date-image"> -->
+            </div>
+        </div>
+        <div class="chart-container">
+            <div id="chartContainer" class="mainChart"></div>
+        </div>
+        
+    </div>
+</div>

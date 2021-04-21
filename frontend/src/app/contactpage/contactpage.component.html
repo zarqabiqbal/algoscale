@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="navbar-brand">
+            <img src="{{FILE_URL}}/logo.png" height="40">
+        </div>          
+        <div class="navbar-nav ml-auto">   
+            <div class="navbar-nav">
+                <a routerLink='/'>
+                    <div class="options active-option">Contacts</div>
+                </a>
+                <a routerLink='/analytics'>
+                    <div class="options">Analytics</div>
+                </a>
+            </div>          
+            <img src="{{FILE_URL}}/logout.png" (click)="logout()" height="40">
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container col-12">
+            <div class="col-6 formContainer">
+                <h1>Contact Us Form</h1>
+                <form #contactUsForm="ngForm" (ngSubmit)="contactSubmit(contactUsForm)">
+                    <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" name="fname" ngModel #fname="ngModel" class="form-control" id="fname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname" ngModel class="form-control" id="lname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" (keyup)="emailValidator($event)" name="email" ngModel class="form-control" id="email" required email>
+                        <p><font style="color: red;">{{email_error_text}}</font></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" name="message" ngModel id="message" rows="3" required></textarea>
+                    </div>
+                    <div *ngIf="contactUsForm.form.valid;then yesSubmit;else noSubmit"></div>
+                    <ng-template #noSubmit>
+                        <input type="submit" class="subButton" value="Please fill all fields to submit" disabled>
+                    </ng-template>
+                    <ng-template #yesSubmit>
+                        <input type="submit" class="subButton" [disabled]="isUserSubmit" value="Submit">
+                    </ng-template>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

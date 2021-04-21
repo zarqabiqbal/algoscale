@@ -1,0 +1,20 @@
+.headerBar{
+    background-color: rgb(41, 41, 41);
+    height:50px;
+    padding: 10px;
+}
+.small_circle{
+    float: left;
+    height: 15px;
+    width: 15px;
+    background-color:dimgrey;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.navbarText{
+    color: white;
+    text-align: center;
+}
