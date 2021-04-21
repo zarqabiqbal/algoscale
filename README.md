@@ -1,4 +1,4 @@
-# algoscale
+# Algoscale
 Algoscale Assignment
 
 RUN FRONTEND
